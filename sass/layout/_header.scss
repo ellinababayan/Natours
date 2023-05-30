@@ -1,0 +1,42 @@
+.header {
+    height: 85vh;
+    background-image: linear-gradient(
+        to right bottom, rgba($color-primary-light, 0.622), rgba($color-primary-dark, 0.659)), url(../img/first.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @include respond(tab-port) {
+        height: 65vh;
+        clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 25%; 
+        left: 30%; 
+        text-transform: translate(-50%, -50%);
+        text-align: center;
+
+        @include respond(tab-port) {
+            left: 26%
+        }
+
+        @include respond(big-desktop) {
+            left: 24%;
+        }
+    }
+}
